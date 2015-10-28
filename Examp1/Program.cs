@@ -24,7 +24,7 @@ namespace Examp1
             t.Start();
             for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine("Main thread: Do some work.");
+                Console.WriteLine("Main thread: Do some work now.");
                 Thread.Sleep(0);
             }
             t.Join();
