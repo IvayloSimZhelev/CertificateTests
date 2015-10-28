@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 
 namespace Examp1
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void ThreadMethod()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("ThreadProc: {0}", i);
+                Thread.Sleep(0);
+            }
+        }
+
+        public static void Main(string[] args)
         {
             Thread t = new Thread(new ThreadStart(ThreadMethod));
             t.Start();
@@ -19,15 +28,6 @@ namespace Examp1
                 Thread.Sleep(0);
             }
             t.Join();
-        }
-
-        private static void ThreadMethod()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("ThreadProc: { 0}", i);
-                Thread.Sleep(0);
-            }
         }
     }
 }
